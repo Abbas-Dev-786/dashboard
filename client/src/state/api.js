@@ -6,10 +6,13 @@ export const api = createApi({
   tagTypes: [
     "User",
     "Customers",
+    "Admins",
     "Products",
     "Transactions",
     "Geography",
     "OverallStats",
+    "Performance",
+    "Dashboard",
   ],
   endpoints: (build) => ({
     getUser: build.query({
@@ -19,6 +22,10 @@ export const api = createApi({
     getCustomers: build.query({
       query: () => "users/customers",
       provideTags: ["Customers"],
+    }),
+    getAdmins: build.query({
+      query: () => "users/admins",
+      provideTags: ["Admins"],
     }),
     getProducts: build.query({
       query: () => "products/",
@@ -40,6 +47,14 @@ export const api = createApi({
       query: () => "stats/overallStats",
       provideTags: ["OverallStats"],
     }),
+    getUserPerformance: build.query({
+      query: (id) => `users/performance/${id}`,
+      providesTags: ["Performance"],
+    }),
+    getDashboard: build.query({
+      query: () => "stats/dashboardStats",
+      providesTags: ["Dashboard"],
+    }),
   }),
 });
 
@@ -50,4 +65,7 @@ export const {
   useGetTransactionsQuery,
   useGetGeographyQuery,
   useGetOverallStatsQuery,
+  useGetAdminsQuery,
+  useGetUserPerformanceQuery,
+  useGetDashboardQuery,
 } = api;

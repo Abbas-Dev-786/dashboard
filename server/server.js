@@ -7,12 +7,14 @@ const Product = require("./models/productModel");
 const ProductStat = require("./models/productStatModel");
 const Transaction = require("./models/transactionModel");
 const OverallStat = require("./models/overallStatsModel");
+const AffiliateStat = require("./models/affiliateStatModel");
 const {
   dataUser,
   dataProduct,
   dataProductStat,
   dataTransaction,
   dataOverallStat,
+  dataAffiliateStat,
 } = require("./dev-data/data");
 
 mongoose
@@ -25,6 +27,7 @@ mongoose
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction)
     // OverallStat.insertMany(dataOverallStat);
+    // AffiliateStat.insertMany(dataAffiliateStat);
   })
   .catch((err) => console.log(err.message));
 

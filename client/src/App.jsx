@@ -11,6 +11,10 @@ import Transactions from "./pages/transactions/Transactions";
 import Geography from "./pages/geography/Geography";
 import Overview from "./pages/overview/Overview";
 import Daily from "./pages/daily/Daily";
+import Monthly from "./pages/mothly/Monthly";
+import Breakdown from "./pages/breakdown/Breakdown";
+import Admins from "./pages/admins/Admins";
+import Performance from "./pages/performance/Performance";
 
 const App = () => {
   const mode = useSelector((state) => state.global.mode);
@@ -31,6 +35,10 @@ const App = () => {
               <Route path="/geography" element={<Geography />} />
               <Route path="/overview" element={<Overview />} />
               <Route path="/daily" element={<Daily />} />
+              <Route path="/monthly" element={<Monthly />} />
+              <Route path="/breakdown" element={<Breakdown />} />
+              <Route path="/admin" element={<Admins />} />
+              <Route path="/performance" element={<Performance />} />
             </Route>
           </Routes>
         </ThemeProvider>
